@@ -90,22 +90,17 @@ class MainActivity : AppCompatActivity() {
 
         val borradoParcial = findViewById<ImageButton>(R.id.masmenos)
         borradoParcial.setOnClickListener{
-
-            if  (pantalla2.text.toString().isEmpty()){
+            pantalla2.text = pantalla2.text.toString().dropLast(1)  //Borra el ultimo digito al ultimo deja la pantalla vacia
+            if (pantalla2.text.toString().isEmpty()){         //Aquí valido si la pantalla esta vacia y de estarlo lo vuelve a 0
                 pantalla2.text = "0"
             }
-            else{
-                pantalla2.text = pantalla2.text.toString().dropLast(1)
-            }
+
         }
 
         val btnSuma = findViewById<ImageButton>(R.id.suma)
         btnSuma.setOnClickListener{
 
              operacionesMatematicas("+")
-
-           /* ultimoValorGuardado = pantalla.text.toString()
-            num1 = ultimoValorGuardado.toInt()*/
 
         }
          val btnResta = findViewById<ImageButton>(R.id.resta)
@@ -128,7 +123,14 @@ class MainActivity : AppCompatActivity() {
 
          val btnPunto = findViewById<ImageButton>(R.id.punto)
          btnPunto.setOnClickListener{
-             pantalla2.append(".")
+            if (pantalla2.text == "0"){
+                pantalla2.text = "0."
+            }
+            else if (pantalla2.text.toString().contains(".")){
+                pantalla2.text = pantalla2.text.toString()
+            }else{
+                pantalla2.append(".")
+            }
          }
 
         val btnResultado = findViewById<ImageButton>(R.id.igual)

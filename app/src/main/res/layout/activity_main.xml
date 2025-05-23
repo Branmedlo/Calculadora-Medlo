@@ -6,249 +6,269 @@
     android:gravity="bottom"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center|end"
-        android:text="0"
-        android:textColor="#ffffff"
-        android:textSize="70sp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#393754"
-        android:fontFamily="monospace"
-        android:gravity="center|end"
-        android:padding="20dp"
-        android:textColor="#ffffff"
-        android:textSize="55sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/Ac"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:text="AC"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <ImageButton
-            android:id="@+id/masmenos"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:adjustViewBounds="true"
-            android:background="#7081EA"
-            android:scaleType="fitCenter"
-            android:padding="32dp"
-            android:src="@mipmap/borrado"
-
-
-            android:textColor="#ffffff" />
-
-        <ImageButton
-            android:id="@+id/porcentage"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:textColor="#ffffff"
-            android:src="@mipmap/porcentaje"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="35dp"/>
-
-        <ImageButton
-            android:id="@+id/division"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:src="@mipmap/division"
-            android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="32dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/siete"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="7"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/ocho"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="8"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/nueve"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="9"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <ImageButton
-            android:id="@+id/multiplicacion"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:src="@mipmap/multiplicacion"
-            android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="35dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/cuatro"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="4"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/cinco"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="5"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/seis"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="6"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <ImageButton
-            android:id="@+id/resta"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:src="@mipmap/menos"
-            android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="35dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/btn_uno"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="1"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/dos"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="2"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <Button
-            android:id="@+id/tres"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:text="3"
-            android:textColor="#ffffff"
-            android:textSize="20sp"/>
-
-        <ImageButton
-            android:id="@+id/suma"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:src="@mipmap/suma"
-            android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="35dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/cero"
-            android:layout_width="199dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|end"
             android:text="0"
             android:textColor="#ffffff"
-            android:textSize="20sp"/>
+            android:textSize="70sp" />
 
-        <ImageButton
-            android:id="@+id/punto"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#554D94"
-            android:src="@mipmap/punto"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#393754"
+            android:fontFamily="monospace"
+            android:gravity="center|end"
+            android:padding="20dp"
             android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="38dp"/>
-
-        <ImageButton
-            android:id="@+id/igual"
-            android:layout_width="99dp"
-            android:layout_height="90dp"
-            android:background="#7081EA"
-            android:src="@mipmap/igual"
-            android:textColor="#ffffff"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="35dp"/>
+            android:textSize="55sp" />
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/Ac"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#7081EA"
+                android:text="AC"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/masmenos"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="32dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/borrado"
+                android:textColor="#ffffff" />
+
+            <ImageButton
+                android:id="@+id/porcentage"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="35dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/porcentaje"
+                android:textColor="#ffffff" />
+
+            <ImageButton
+                android:id="@+id/division"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="32dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/division"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/siete"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="7"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/ocho"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="8"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/nueve"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="9"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/multiplicacion"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="35dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/multiplicacion"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/cuatro"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="4"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/cinco"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="5"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/seis"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="6"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/resta"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="35dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/menos"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btn_uno"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="1"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/dos"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="2"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/tres"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="3"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/suma"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="35dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/suma"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/cero"
+                android:layout_width="199dp"
+                android:layout_height="90dp"
+                android:background="#554D94"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/punto"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#554D94"
+                android:contentDescription="Null"
+                android:padding="38dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/punto"
+                android:textColor="#ffffff" />
+
+            <ImageButton
+                android:id="@+id/igual"
+                android:layout_width="99dp"
+                android:layout_height="90dp"
+                android:adjustViewBounds="true"
+                android:background="#7081EA"
+                android:contentDescription="Null"
+                android:padding="35dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/igual"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
