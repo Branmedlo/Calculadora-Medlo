@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Calculadora01" parent="Theme.AppCompat.Light.NoActionBar" />
+    <style name="Theme.Calculadora01" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimaryDark">#393754</item>
+        <item name="colorPrimary">#393754</item>
+        <item name="colorAccent">#7081EA</item>
+        <item name="android:navigationBarColor">#393754</item>
+    </style>
 </resources>
+

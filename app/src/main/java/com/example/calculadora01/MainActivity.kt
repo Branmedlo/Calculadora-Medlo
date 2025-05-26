@@ -5,17 +5,17 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
+import kotlin.math.*
 import androidx.appcompat.app.AppCompatActivity
-import java.util.logging.Logger
+
 
 
 class MainActivity : AppCompatActivity() {
 
 
      //VARIABLES
-     var num1 = 0
-     var num2 = 0
+     var num1: Float = 0.0f
+     var num2: Float = 0.0f
      var operacionAsignada = "0"
      var capturaDePantalla = "0"
      lateinit var pantalla2: TextView
@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-         pantalla = findViewById<TextView>(R.id.textView)
-         pantalla2 = findViewById<TextView>(R.id.textView2)
+         pantalla = findViewById(R.id.textView)
+         pantalla2 = findViewById(R.id.textView2)
 
         val btnCero = findViewById<Button>(R.id.cero)
         btnCero.setOnClickListener{
@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity() {
              operacionesMatematicas("/")
          }
 
-         var btnMultiplicacion = findViewById<ImageButton>(R.id.multiplicacion)
+         val btnMultiplicacion = findViewById<ImageButton>(R.id.multiplicacion)
          btnMultiplicacion.setOnClickListener{
 
              operacionesMatematicas("*")
@@ -134,46 +134,71 @@ class MainActivity : AppCompatActivity() {
          }
 
         val btnResultado = findViewById<ImageButton>(R.id.igual)
-        btnResultado.setOnClickListener(){
+        btnResultado.setOnClickListener() {
 
-            var segundaCapturaDePantalla = pantalla2.text.toString()
+            val segundaCapturaDePantalla = pantalla2.text.toString()
 
             try {
-                num2 = segundaCapturaDePantalla.toInt()
-            } catch (e: NumberFormatException){
+                num2 = segundaCapturaDePantalla.toFloat()
+            } catch (e: NumberFormatException) {
                 println("No se ha ingresado un numero valido")
             }
+            var resultado = 0.0f
 
             when(operacionAsignada){
-                "+" -> pantalla.text = "= ${suma()}"
-                "-" -> pantalla.text = "= ${resta()}"
-                "*" -> pantalla.text = "= ${multiplicaion()}"
-                "/" -> pantalla.text = "= ${division()}"
+                "+" -> resultado = suma()
+                "-" -> resultado = resta()
+                "*" -> resultado = multiplicaion()
+                "/" -> resultado = division()
             }
 
+            if (resultado % 1 == 0f) {
+                pantalla.text = "= ${resultado.toInt()}"
+            }else{
+                pantalla.text = "= ${resultado}"
+
+            }
+
+            /*if (operacionAsignada == "+" && suma() % 1 == 0f) {
+                pantalla.text = "= ${suma().toInt()}"
+            }else if(operacionAsignada == "+"){
+                pantalla.text = "= ${suma()}"
+            }else if (operacionAsignada == "-" && resta() % 1 == 0f) {
+                pantalla.text = "= ${resta().toInt()}"
+            }else if(operacionAsignada == "-"){
+                pantalla.text = "= ${resta()}"
+            }else if (operacionAsignada == "*" && multiplicaion() % 1 == 0f) {
+                pantalla.text = "= ${multiplicaion().toInt()}"
+            }else if(operacionAsignada == "*"){
+                pantalla.text = "= ${multiplicaion()}"
+            }else if (operacionAsignada == "/" && division() % 1 == 0f) {
+                pantalla.text = "= ${division().toInt()}"
+            }else if(operacionAsignada == "/"){
+                pantalla.text = "= ${division()}"
+            }*/
+
         }
-
-
     }
 
     //Metodos
 
-    fun suma():Int {
+    fun suma():Float {
         var resultadoSuma = num1 + num2
+
         return resultadoSuma
     }
 
-    fun resta(): Int{
+    fun resta(): Float{
         var resultadoResta = num1 - num2
         return resultadoResta
     }
 
-    fun division(): Int{
+    fun division(): Float{
         var resultadoDivision = num1 / num2
         return resultadoDivision
     }
 
-    fun multiplicaion(): Int{
+    fun multiplicaion(): Float{
         var resultadoMultiplicacion = num1 * num2
         return resultadoMultiplicacion
     }
@@ -193,7 +218,7 @@ class MainActivity : AppCompatActivity() {
         capturaDePantalla = pantalla2.text.toString()
 
         try {
-            num1 = capturaDePantalla.toInt()
+            num1 = capturaDePantalla.toFloat()
         }catch (e:NumberFormatException){
             println("No se ha ingresado un numero valido")
         }
