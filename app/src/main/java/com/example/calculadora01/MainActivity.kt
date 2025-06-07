@@ -1,11 +1,11 @@
 package com.example.calculadora01
 
 import android.os.Bundle
-import android.util.Log
+import android.util.TypedValue
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import kotlin.math.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -30,53 +30,70 @@ class MainActivity : AppCompatActivity() {
 
         val btnCero = findViewById<Button>(R.id.cero)
         btnCero.setOnClickListener{
-           agregarNumero("0")
+            agregarNumero("0")
+            reducirTamañoDeTexto()
         }
 
         val btnUno = findViewById<Button>(R.id.btn_uno)
         btnUno.setOnClickListener{
-           agregarNumero("1")
-              //Apend agrega un nuevo digito
+            agregarNumero("1")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnDos = findViewById<Button>(R.id.dos)
         btnDos.setOnClickListener{
-           agregarNumero("2")
+            agregarNumero("2")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnTres = findViewById<Button>(R.id.tres)
         btnTres.setOnClickListener{
             agregarNumero("3")
+            limitarNumerosEnPantalla()
         }
 
         val btnCuatro = findViewById<Button>(R.id.cuatro)
         btnCuatro.setOnClickListener{
-           agregarNumero("4")
+            agregarNumero("4")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnCinco = findViewById<Button>(R.id.cinco)
         btnCinco.setOnClickListener{
-           agregarNumero("5")
+            agregarNumero("5")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnSeis = findViewById<Button>(R.id.seis)
         btnSeis.setOnClickListener{
-           agregarNumero("6")
+            agregarNumero("6")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnSiete = findViewById<Button>(R.id.siete)
         btnSiete.setOnClickListener{
-           agregarNumero("7")
+            agregarNumero("7")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnOcho = findViewById<Button>(R.id.ocho)
         btnOcho.setOnClickListener{
             agregarNumero("8")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
         val btnNueve = findViewById<Button>(R.id.nueve)
         btnNueve.setOnClickListener{
             agregarNumero("9")
+            limitarNumerosEnPantalla()
+            reducirTamañoDeTexto()
         }
 
 
@@ -84,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         btnClear.setOnClickListener{
             pantalla2.text = "0"
             pantalla.text = ""
+            aumentarTamañoDeTexto()
         }
 
         /* dropLast metodo que utilizo para lograr borrar de uno en uno*/
@@ -94,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             if (pantalla2.text.toString().isEmpty()){         //Aquí valido si la pantalla esta vacia y de estarlo lo vuelve a 0
                 pantalla2.text = "0"
             }
+            aumentarTamañoDeTexto()
 
         }
 
@@ -133,6 +152,11 @@ class MainActivity : AppCompatActivity() {
             }
          }
 
+         val btnPorcentaje = findViewById<ImageButton>(R.id.porcentage)
+         btnPorcentaje.setOnClickListener{
+             operacionesMatematicas("%")
+         }
+
         val btnResultado = findViewById<ImageButton>(R.id.igual)
         btnResultado.setOnClickListener() {
 
@@ -150,6 +174,7 @@ class MainActivity : AppCompatActivity() {
                 "-" -> resultado = resta()
                 "*" -> resultado = multiplicaion()
                 "/" -> resultado = division()
+                "%" -> resultado = porcentaje()
             }
 
             if (resultado % 1 == 0f) {
@@ -203,6 +228,11 @@ class MainActivity : AppCompatActivity() {
         return resultadoMultiplicacion
     }
 
+    fun porcentaje(): Float{
+        val resultadoPorcentaje = (num1 / 100 * num2)
+        return resultadoPorcentaje
+    }
+
     fun agregarNumero(numero:String){
         if (pantalla2.text.toString() == "0"){
             pantalla2.text = numero
@@ -226,7 +256,32 @@ class MainActivity : AppCompatActivity() {
         pantalla2.text = "0"
     }
 
+    fun limitarNumerosEnPantalla() {
+        if (pantalla2.text.toString().length > 11) {
+            pantalla2.text = pantalla2.text.toString().substring(0, 11)
+            Toast.makeText(this, "Limite de digitos para ingresar", Toast.LENGTH_SHORT).show()
+        }
+
+        /* El metodo substring toma el primer indice de la cadena que le inidique y opcinalmente el ultimo y
+        retorna el total de la cadena original. En este caso util para limitar el numero de diditos que el usuario puede
+        ingresar
+         */
+    }
+
+    fun reducirTamañoDeTexto(){
+        if (pantalla2.text.toString().length == 6){
+            pantalla2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50f)
+        }
+    }
+
+    fun aumentarTamañoDeTexto(){
+        if (pantalla2.text.toString().length < 6){
+            pantalla2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 70f)
+        }
+    }
+
  }
+
 
 
 
